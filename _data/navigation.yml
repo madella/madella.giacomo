@@ -2,7 +2,24 @@
 main:
   - title: "About"
     url: /about/
+  - title: "Portfolio"
+    url: /portfolio/
+  - title: "Resume"
+    url: /resume/
   - title: "Research"
     url: /research/
+  - title: "Certificates"
+    url: /certificates/
   - title: "Contact"
     url: /contact/
+  - title: "Man"
+    url: /man/
+
+# sidebar:
+#   - title: "Title"
+#     image: "/assets/images/your-image.jpg"
+#     image_alt: "image"
+#     text: "Some text here."
+#   - title: "Another Title"
+#     text: "More text here."
+#     nav: sidebar-sample

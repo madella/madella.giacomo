@@ -1,0 +1,12 @@
+# /_data/authors.yml
+Giacomo Madella:
+  name        : "Giacomo Madella"
+  # bio         : "What do you want, jewels? I am a very extravagant man."
+  avatar      : "/assets/images/profile.jpg"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:giacomo.madella@gmail.com"
+    - label: "Website"
+      icon: "fas fa-fw fa-link"
+      url: "https://madella.github.io"

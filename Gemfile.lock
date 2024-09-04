@@ -52,7 +52,6 @@ GEM
       jekyll-coffeescript (= 1.2.2)
       jekyll-commonmark-ghpages (= 0.5.1)
       jekyll-default-layout (= 0.1.5)
-      jekyll-feed (= 0.17.0)
       jekyll-gist (= 1.5.0)
       jekyll-github-metadata (= 2.16.1)
       jekyll-include-cache (= 0.2.1)

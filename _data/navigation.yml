@@ -12,8 +12,6 @@ main:
     url: /certificates/
   - title: "Contact"
     url: /contact/
-  - title: "Man"
-    url: /man/
 
 # sidebar:
 #   - title: "Title"

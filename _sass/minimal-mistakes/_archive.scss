@@ -6,6 +6,7 @@
   margin-top: 1em;
   margin-bottom: 2em;
 
+
   @include breakpoint($large) {
     float: inline-end;
     width: calc(100% - #{$right-sidebar-width-narrow});
@@ -144,6 +145,10 @@
       margin-inline-end: -1 * $right-sidebar-width;
     }
   }
+}
+
+.archive{
+  padding-right: 0px;      
 }
 
 .grid__item {

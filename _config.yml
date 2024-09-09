@@ -27,7 +27,25 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "madella.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  madella
 
+collections:
+  portfolio:
+    output: true
+    permalink: /:collection/:path/
 
+defaults:
+  # _portfolio
+  - scope:
+      path: ""
+      type: portfolio
+    values:
+      layout: single
+      author_profile: false
+      share: false
+
+
+search: true
+lunr:
+  search_within_pages: true
 # sass:
 #   sass_dir: _sass
 #   style: compressed # https://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style

@@ -16,3 +16,6 @@ Giacomo Madella:
     - label: "Website"
       icon: "fas fa-fw fa-link"
       url: "https://madella.github.io"
+    - label: "Thingiverse"
+      icon: "fas fa-cube"
+      url: "https://www.thingiverse.com/madella__"

@@ -7454,7 +7454,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Quantum-Computing-Project-Work---mod-1">Quantum Computing Project Work - mod 1<a class="anchor-link" href="#Quantum-Computing-Project-Work---mod-1"></a></h1>
+<h2 id="Quantum-Computing-Project-Work---mod-1">Quantum Computing Project Work - mod 1<a class="anchor-link" href="#Quantum-Computing-Project-Work---mod-1"></a></h2>
 </div>
 </div>
 </div>
@@ -7511,7 +7511,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Shor's-Algorithm">Shor's Algorithm<a class="anchor-link" href="#Shor's-Algorithm"></a></h2>
+<h3 id="Shor's-Algorithm">Shor's Algorithm<a class="anchor-link" href="#Shor's-Algorithm"></a></h3>
 </div>
 </div>
 </div>
@@ -7523,7 +7523,7 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>Factoring large integers is a difficult problem for classical computers. In fact, the best known classical algorithms have a runtime that grows exponentially with the size of the integer to be factored, which makes it impractical for large numbers. This is a problem for cryptographic systems that rely on the difficulty of factoring large integers, such as RSA.</p>
-<h3 id="Steps:">Steps:<a class="anchor-link" href="#Steps:"></a></h3><ol>
+<h4 id="Steps:">Steps:<a class="anchor-link" href="#Steps:"></a></h4><ol>
 <li><p>Pick a random number 1 &lt; $a$ &lt; $N$.</p>
 </li>
 <li><p>Compute $K$ = gcd ( $a$ , $N$ ), the greatest common divisor of $a$ and $N$.</p>
@@ -7539,7 +7539,7 @@ $f ( x ) = a^{x} ( \bmod  N )$ .</p>
 <li><p>Otherwise, both gcd ( $a^{r / 2}$ + 1 , $N$ )or gcd ( $a^{r / 2}$ − 1 , $N$ ) are nontrivial factors of $N$, so we are done.</p>
 </li>
 </ol>
-<h3 id="Period-Finding-Solutions-(from-%5Bqiskit%5D)">Period Finding Solutions (from [qiskit])<a class="anchor-link" href="#Period-Finding-Solutions-(from-%5Bqiskit%5D)"></a></h3><p>Shor’s solution was to use quantum phase estimation on the unitary operator:</p>
+<h4 id="Period-Finding-Solutions-(from-%5Bqiskit%5D)">Period Finding Solutions<a class="anchor-link" href="#Period-Finding-Solutions-(from-%5Bqiskit%5D)"></a></h4><p>Shor’s solution was to use quantum phase estimation on the unitary operator:</p>
 <p>$$ U|y\rangle \equiv |ay \bmod N \rangle $$
 [qiskit]: <a href="https://qiskit.org/textbook/ch-algorithms/shor.html#4.-Modular-Exponentiation">https://qiskit.org/textbook/ch-algorithms/shor.html#4.-Modular-Exponentiation</a></p>
 </div>
@@ -7571,7 +7571,7 @@ $$</p>
 <p>Since the computational basis state $|1\rangle$ is a superposition of these eigenstates, which means if we do QPE on $U$ using the state $|1\rangle$, we will measure a phase:</p>
 <p>$$\phi = \frac{s}{r}$$</p>
 <p>Where $s$ is a random integer between $0$ and $r-1$. We finally use the <a href="https://en.wikipedia.org/wiki/Continued_fraction">continued fractions</a> algorithm on $\phi$ to find $r$.</p>
-<h3 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion"></a></h3><p>When we have obtained $r$, we might be able to use this to find a factor of $N$. Since:</p>
+<h4 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion"></a></h4><p>When we have obtained $r$, we might be able to use this to find a factor of $N$. Since:</p>
 <p>$$a^r \bmod N = 1 $$</p>
 <p>then:</p>
 <p>$$(a^r - 1) \bmod N = 0 $$</p>
@@ -7588,7 +7588,7 @@ $$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Quiskit-implementation">Quiskit implementation<a class="anchor-link" href="#Quiskit-implementation"></a></h3>
+<h4 id="Quiskit-implementation">Quiskit implementation<a class="anchor-link" href="#Quiskit-implementation"></a></h4>
 </div>
 </div>
 </div>
@@ -7891,7 +7891,7 @@ Guessed Factors: 7 and 3
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="RSA">RSA<a class="anchor-link" href="#RSA"></a></h2>
+<h3 id="RSA">RSA<a class="anchor-link" href="#RSA"></a></h3>
 </div>
 </div>
 </div>
@@ -7903,7 +7903,7 @@ Guessed Factors: 7 and 3
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>RSA (Rivest-Shamir-Adleman) is an asymmetric cryptography algorithm used for secure communication. The algorithm uses two keys, a public key and a private key, to encrypt and decrypt messages. The public key can be shared without compromising security, while the private key must be kept secret.</p>
-<h3 id="Variables">Variables<a class="anchor-link" href="#Variables"></a></h3><p>The variables used in RSA are:</p>
+<h4 id="Variables">Variables<a class="anchor-link" href="#Variables"></a></h4><p>The variables used in RSA are:</p>
 <ul>
 <li>$p$ and $q$: two distinct prime numbers</li>
 <li>$n$: the product of $p$ and $q$</li>
@@ -7912,7 +7912,7 @@ Guessed Factors: 7 and 3
 <li>$(e, n)$: is the <strong>public key</strong></li>
 <li>$(d, n)$: is the <strong>private key</strong></li>
 </ul>
-<h3 id="Formulas">Formulas<a class="anchor-link" href="#Formulas"></a></h3><p>The formulas used in RSA are as follows:</p>
+<h4 id="Formulas">Formulas<a class="anchor-link" href="#Formulas"></a></h4><p>The formulas used in RSA are as follows:</p>
 <ul>
 <li>n = pq</li>
 <li>$\varphi(n) = (p-1)(q-1)$</li>
@@ -7930,7 +7930,7 @@ Guessed Factors: 7 and 3
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Full-Implementation">Full Implementation<a class="anchor-link" href="#Full-Implementation"></a></h2>
+<h3 id="Full-Implementation">Full Implementation<a class="anchor-link" href="#Full-Implementation"></a></h3>
 </div>
 </div>
 </div>
@@ -8139,7 +8139,7 @@ Eve]	 I found these 2 prime numbers: ((7, 3)) and with those, i stole the messag
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="References">References<a class="anchor-link" href="#References"></a></h2>
+<h3 id="References">References<a class="anchor-link" href="#References"></a></h3>
 </div>
 </div>
 </div>
@@ -8168,7 +8168,7 @@ Eve]	 I found these 2 prime numbers: ((7, 3)) and with those, i stole the messag
   </div>
   <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
   </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-  <h1 id="Giacomo-Madella's-Quantum-Computing-Project-Work---module-2">Quantum Computing Project Work - mod 2<a class="anchor-link" href="#Giacomo-Madella's-Quantum-Computing-Project-Work---module-2"></a></h1><p>Dataset: Red Wine Quality one of the benchmark for linear regression: <a href="https://www.kaggle.com/datasets/uciml/red-wine-quality-cortez-et-al-2009">page</a>.</p>
+  <h2 id="Giacomo-Madella's-Quantum-Computing-Project-Work---module-2">Quantum Computing Project Work - mod 2<a class="anchor-link" href="#Giacomo-Madella's-Quantum-Computing-Project-Work---module-2"></a></h2><p>Dataset: Red Wine Quality one of the benchmark for linear regression: <a href="https://www.kaggle.com/datasets/uciml/red-wine-quality-cortez-et-al-2009">page</a>.</p>
   <p>Take a dataset which is widely used as a “benchmark” CML classification problem (e.g. MNIST, or many more) then:</p>
   <ul>
   <li>implement and understand it classically</li>
@@ -8214,7 +8214,7 @@ Eve]	 I found these 2 prime numbers: ((7, 3)) and with those, i stole the messag
   </div>
   <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
   </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-  <h3 id="Data-Exploration-and-preparation">Data Exploration and preparation<a class="anchor-link" href="#Data-Exploration-and-preparation"></a></h3>
+  <h4 id="Data-Exploration-and-preparation">Data Exploration<a class="anchor-link" href="#Data-Exploration-and-preparation"></a></h4>
   </div>
   </div>
   </div>
@@ -8361,7 +8361,7 @@ Eve]	 I found these 2 prime numbers: ((7, 3)) and with those, i stole the messag
   </div>
   <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
   </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-  <h5 id="Show-the-number-of-rows-with-nulls">Show the number of rows with nulls<a class="anchor-link" href="#Show-the-number-of-rows-with-nulls"></a></h5>
+  <p id="Show-the-number-of-rows-with-nulls"><strong>Show the number of rows with nulls</strong><a class="anchor-link" href="#Show-the-number-of-rows-with-nulls"></a></p>
   </div>
   </div>
   </div>
@@ -9053,7 +9053,7 @@ Eve]	 I found these 2 prime numbers: ((7, 3)) and with those, i stole the messag
   </div>
   <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
   </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-  <h3 id="QML-section-multivariate">QML section multivariate<a class="anchor-link" href="#QML-section-multivariate"></a></h3>
+  <h4 id="QML-section-multivariate">QML section multivariate<a class="anchor-link" href="#QML-section-multivariate"></a></h4>
   </div>
   </div>
   </div>
@@ -9427,7 +9427,7 @@ Eve]	 I found these 2 prime numbers: ((7, 3)) and with those, i stole the messag
   </div>
   <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
   </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-  <h4 id="Little-better">Little better<a class="anchor-link" href="#Little-better"></a></h4>
+  <p id="Little-better"><strong>Little better</strong><a class="anchor-link" href="#Little-better"></a></p>
   </div>
   </div>
   </div>
@@ -9657,7 +9657,7 @@ Eve]	 I found these 2 prime numbers: ((7, 3)) and with those, i stole the messag
   </div>
   <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
   </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-  <h3 id="Wrap-up">Wrap-up<a class="anchor-link" href="#Wrap-up"></a></h3>
+  <h4 id="Wrap-up">Wrap-up<a class="anchor-link" href="#Wrap-up"></a></h4>
   </div>
   </div>
   </div>
@@ -9713,7 +9713,7 @@ Eve]	 I found these 2 prime numbers: ((7, 3)) and with those, i stole the messag
   </div>
   <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
   </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-  <h3 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion"></a></h3><p>With all the features, i didn't even try to run it on the QML counterpart due to lack of performance on my computer.</p>
+  <h4 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion"></a></h4><p>With all the features, i didn't even try to run it on the QML counterpart due to lack of performance on my computer.</p>
   <p>With a dataset reduced from $7$ to $3$ features, we saw improvements on both sides, reaching the 0 threshold on ML training</p>
   <p>Trying to change the ansats to <strong>EfficientSU2</strong> do not have improved performance of the model, and the train-test results are ambiguous</p>
   <p>With another optimizer <strong>L_BFGS_B</strong> i reached a better performance. Maybe it is the best cost benefit ratio.</p>

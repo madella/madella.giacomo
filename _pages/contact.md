@@ -9,7 +9,7 @@ classes: wide
 Feel free to reach out to me through any of the following methods:
 
 ### Email
-You can email me at [giacomo.madella@gmail.com](mailto:giacomo.madella@gmail.com).
+You can email me at [giacomo.madella@gmail.com](mailto:giacomo.madella@gmail.com)
 
 ### Social Media
 - [LinkedIn](https://www.linkedin.com/in/giacomomadella/)

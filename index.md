@@ -42,4 +42,4 @@ In the <a href="/projects/" class="glitch" data-text="Geeky">Project </a> sectio
 
 Feel free to reach out if you’d like to work together or just say hello. I’d love to connect!
 
-<span style="font-size: 0.2em;">*And just in case you’re wondering, I’ve obviously used generative AI to polish up this introduction.</span>
+<span style="font-size: 0.2em;position: relative; bottom: 0;">*And just in case you’re wondering, I’ve obviously used generative AI to polish up this introduction.</span>

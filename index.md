@@ -3,8 +3,6 @@ title: "About Me"
 layout: archive
 author_profile: true
 permalink: /
-redirect_from:
-  - /about
 ---
 <script>
   document.addEventListener('DOMContentLoaded', function() {

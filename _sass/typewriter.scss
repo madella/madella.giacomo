@@ -36,3 +36,19 @@ max-width: 45%;
     }
 }
 }
+
+
+.tw-wrapper.inception {
+    // display: block;
+    max-width: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+    > .tw-inception {
+        pointer-events: none;
+        @include typed(
+        "\"Remember to look up at the stars and not down at your feet. Try to make sense of what you see, and wonder about what makes the universe exist.\"",
+        "\"Curiosity is the lust of the mind.\"",
+        "\"The more you know, the more you realize you don’t know.\"",
+        3.5,
+        );
+    }
+}

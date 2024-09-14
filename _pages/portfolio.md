@@ -21,6 +21,7 @@ Here are the projects I’ve completed throughout my studies and in my free time
 * Personal Projects: These projects stem from my personal passions and interests. 
 * Experimental Projects: These are initiatives I’ve undertaken to explore new ideas, tools, or technologies.
 
+<div id="before-inception"></div>
 ---
 
 <!-- - Linux

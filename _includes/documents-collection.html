@@ -18,13 +18,12 @@
     <!-- #inception sorry but i cant -->
     </div>
     <h2 class="archive__item-title no_toc" itemprop="headline">
-       <a href="">This WebSite</a>
+       <a href="{{ '/projects#inception' }}">This WebSite</a>
     </h2>
-    <p class="archive__item-excerpt" itemprop="description">
-      inception
-    </p>
+    <div class="tw-wrapper inception">
+    <p class="archive__item-excerpt tw-inception" itemprop="description"></p>
+    </div>
     {% include page__meta.html type=include.type %}
-    {% if post.excerpt %}<p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify | strip_html | truncate: 160 }}</p>{% endif %}
 
   </article>
 </div>

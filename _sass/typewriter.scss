@@ -1,0 +1,38 @@
+
+
+.tw-wrapper {
+display: block;
+font-family: monospace;
+// font-size: 125%;
+max-width: 10%;
+> input,
+> .tw {
+    display: block;
+    appearance: none;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+}
+> .tw {
+    pointer-events: none;
+    @include typed(
+    ">_",
+    "giacomo",
+    "madella",
+    1.5,
+    (
+        caret-width: 2px,
+        caret-space: 2px
+    )
+    );
+}
+> input {
+    &:focus,
+    &:active {
+    + .placeholder {
+        display: none;
+    }
+    }
+}
+}

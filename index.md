@@ -37,7 +37,8 @@ I’m not someone who enjoys writing about myself* — I’d rather roll up my s
 
 When I’m not working on my PhD, you’ll probably find me working on new projects, 3D printing, listening to music, or studying new fields.
 
-In the Projects section [DANGER, NERD STUFF](/projects/){: .btn--small .btn .btn--danger}, you’ll find some of the projects I’ve completed over the past few years. I’ll do my best to include them all and keep them updated.
+In the <a href="/projects/" class="glitch" data-text="Geeky">Project </a> section, you’ll find some of the projects I’ve completed over the past few years. I’ll do my best to include them all and keep them updated.
+
 
 Feel free to reach out if you’d like to work together or just say hello. I’d love to connect!
 

@@ -11,7 +11,7 @@ redirect_from:
     var currentUrl = window.location.pathname;
     var navLinks = document.querySelectorAll('.visible-links a');
     navLinks.forEach(function(link) {
-      if (link.getAttribute('href') === '/about/') {
+      if (link.getAttribute('href') === '/') {
         link.textContent = 'This Page';
         // // Optionally add a class to highlight it
         // link.parentElement.classList.add('current-page');

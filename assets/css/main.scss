@@ -1,6 +1,9 @@
 ---
 ---
 @charset "utf-8";
+@import 'https://fonts.googleapis.com/css?family=Roboto+Mono:100';
+
+
 
 @import "typed";
 @import "glitch";
@@ -9,4 +12,3 @@
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 
-@import 'https://fonts.googleapis.com/css?family=Roboto+Mono:100';

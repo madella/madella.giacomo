@@ -3,8 +3,9 @@
 @charset "utf-8";
 @import "typed";
 @import "glitch";
-@import "matrix";
+@import "404";
 @import "typewriter";
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+@import "matrix";
 

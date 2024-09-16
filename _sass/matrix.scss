@@ -4,11 +4,11 @@
 //   height: 100%;
 // }
   #matrix > .text > .dud {
-    color: red;
+    color: $primary-color
   }
   a.matrix.site-title > .text > .dud {
     // color: #a38787;
-    color: #702222;
+    color: $primary-color
   }
   #matrix {
     animation: 1500ms infinite normal matrix;

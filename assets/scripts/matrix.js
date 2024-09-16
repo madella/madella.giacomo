@@ -13,11 +13,11 @@ class TextScramble {
         const promise = new Promise((resolve) => this.resolve = resolve)
         this.queue = []
         for (let i = 0; i < length; i++) {
-        const from = oldText[i] || ''
-        const to = newText[i] || ''
-        const start = Math.floor(Math.random() * start_Random)
-        const end = start + Math.floor(Math.random() * end_Random)
-        this.queue.push({ from, to, start, end })
+            const from = oldText[i] || ''
+            const to = newText[i] || ''
+            const start = Math.floor(Math.random() * start_Random)
+            const end = start + Math.floor(Math.random() * end_Random)
+            this.queue.push({ from, to, start, end })
         }
         cancelAnimationFrame(this.frameRequest)
         this.frame = 0
@@ -61,21 +61,22 @@ class TextScramble {
     }
     }
     let phrases = [
-    '>_',
-    'giacomo',
-    'madella',
+        '>_',
+        'giacomo',
+        'madella',
     ]
+
     const phrases_mtrx = [
-    "Come as you are",
-    "as you were",
-    "as I want you to be",
-    "as a friend",
-    "as a friend",
-    "as an old enemy",
-    "take your time",
-    "hurry up",
-    "choice is yours", 
-    "don't be late"
+        "Come as you are",
+        "as you were",
+        "as I want you to be",
+        "as a friend",
+        "as a friend",
+        "as an old enemy",
+        "take your time",
+        "hurry up",
+        "choice is yours", 
+        "don't be late"
     ]
 
     const el = document.querySelector('.text')
@@ -89,7 +90,7 @@ class TextScramble {
     let next = () => {
     if (mtrx){
         fx.setText(phrases_mtrx[counter],10,30).then(() => {
-        setTimeout(next, 500)
+        setTimeout(next, 700)
         })
         counter = (counter + 1) 
         if (counter > phrases_mtrx.length - 1){
@@ -99,14 +100,13 @@ class TextScramble {
     }
     else {
         fx.setText(phrases[counter],50,70).then(() => {
-        setTimeout(next, 1200)
+        setTimeout(next, 3500)
         })
         while (previous == counter){
         counter = Math.floor(Math.random() * phrases.length)
         }
         previous=counter
-        console.log($(window).width(), phrases_mtrx[0].width)
-        if (Math.random() < 0.2 && $(window).width() >300){ 
+        if (Math.random() < 0.1 && $(window).width() >300){ 
             counter=0;
             mtrx=true 
         }

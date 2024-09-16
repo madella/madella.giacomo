@@ -4,6 +4,7 @@ title: "Certificates"
 layout: archive
 author_profile: true
 permalink: /certificates/
+classes: wide
 ---
 <!-- TODDD:
 Summerschool
@@ -14,7 +15,7 @@ Laurea? -->
 
 Here, you'll find a collection of the certifications and credentials I've earned over the years.
 
-### [Cyberchallenge](/assets/certificates/cc.png)
+# [Cyberchallenge](/assets/certificates/cc.png)
 **Issuing Organization:** CyberChallengeIT 
 **Date Earned:** May 2023  
 <!-- **Description:** Brief description of what this certificate represents and the skills or knowledge gained. -->
@@ -23,7 +24,7 @@ Here, you'll find a collection of the certifications and credentials I've earned
 
 ---
 
-### [English](/assets/certificates/IELTS.jpg)
+# [English](/assets/certificates/IELTS.jpg)
 **Issuing Organization:** IELTS  
 **Date Earned:** September 2021
 **Description:** 6 - B2
@@ -31,7 +32,6 @@ Here, you'll find a collection of the certifications and credentials I've earned
 ![Certificate Image](/assets/certificates/IELTS.jpg)
 
 ---
-
 <!-- ### [Certificate Title 3](#)
 **Issuing Organization:** Organization Name  
 **Date Earned:** Month Year  

@@ -4,6 +4,8 @@ layout: archive
 author_profile: true
 permalink: /man/
 ---
+
+
 # Header one
 
 ## Header two

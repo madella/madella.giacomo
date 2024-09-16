@@ -3,6 +3,7 @@ title: "About Me"
 layout: archive
 author_profile: true
 permalink: /
+classes: wide
 ---
 <script>
   document.addEventListener('DOMContentLoaded', function() {
@@ -11,12 +12,11 @@ permalink: /
     navLinks.forEach(function(link) {
       if (link.getAttribute('href') === '/') {
         link.textContent = 'This Page';
-        // // Optionally add a class to highlight it
-        // link.parentElement.classList.add('current-page');
       }
     });
   });
 </script>
+
 <!-- 
 2. About Me
 	•	Biography: Share your story, including your background, education, and how you got into your field. Keep it professional but add personal touches.

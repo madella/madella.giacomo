@@ -17,9 +17,9 @@ sort_by : number
 Here are the projects I have completed during my studies and in my free time. This collection of work is a showcases of my journey across different areas of interest. These projects are divided into three main categories: -->
 Here are the projects I’ve completed throughout my studies and in my free time. This collection highlights my journey through various areas of interest and is classified into three main categories:
 
-* Academic Projects: These are the results of my studies and research during university.
-* Personal Projects: These projects stem from my personal passions and interests. 
-* Experimental Projects: These are initiatives I’ve undertaken to explore new ideas, tools, or technologies.
+* Academic Projects: the results of my studies and research during university.
+* Personal Projects: stem from my personal passions and interests. 
+* Experimental Projects: initiatives I’ve undertaken to explore new ideas, tools, or technologies.
 
 <div id="before-inception"></div>
 ---

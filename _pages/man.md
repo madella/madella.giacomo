@@ -1,5 +1,5 @@
 ---
-title: "About Me"
+title: "Manual"
 layout: archive
 author_profile: true
 permalink: /man/

@@ -10,7 +10,7 @@
         {% unless logo_path == empty %}
           <a class="site-logo" href="{{ '/' | relative_url }}"><img src="{{ logo_path | relative_url }}" alt="{{ site.masthead_title | default: site.title }}"></a>
         {% endunless %}
-        <a class="matrix site-title" href="{{ '/' | relative_url }} ">
+        <a class="matrix site-title" href="{{ '/' | relative_url }} " style="font-weight: normal; font-size: 2.5ch; margin:0%;">
           {{ site.masthead_title }}
           <!-- to add on upper class tw-wrapper
           <span class="tw"></span> 
@@ -51,7 +51,8 @@
   class TextScramble {
     constructor(el) {
         this.el = el
-        this.chars = '!<-_\\/()[]{}—=+*^?#█@\~________'
+        // █
+        this.chars = '!<-_\\/()[]{}—=+*^?#@\~________'
         this.update = this.update.bind(this)
     }
     setText(newText) {
@@ -80,7 +81,7 @@
             complete++
             output += to
         } else if (this.frame >= start) {
-            if (!char || Math.random() < 0.58) {
+            if (!char || Math.random() < 0.28) {
               char = this.randomChar()
               this.queue[i].char = char
               }

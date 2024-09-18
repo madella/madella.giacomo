@@ -31,6 +31,9 @@ collections:
   portfolio:
     output: true
     permalink: /:collection/:path/
+  3dprint:
+    output: true
+    permalink: /:collection/:path/
 
 defaults:
   # _portfolio
@@ -40,7 +43,7 @@ defaults:
     values:
       layout: single
       author_profile: false
-      share: false'
+      share: false
 
 search: true
 lunr:

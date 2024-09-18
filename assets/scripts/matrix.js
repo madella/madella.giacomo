@@ -106,7 +106,7 @@ class TextScramble {
         counter = Math.floor(Math.random() * phrases.length)
         }
         previous=counter
-        if (Math.random() < 0.1 && $(window).width() >300){ 
+        if (Math.random() < 0.01 && $(window).width() > 250){ 
             counter=0;
             mtrx=true 
         }

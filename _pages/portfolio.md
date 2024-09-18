@@ -7,7 +7,6 @@ collection: portfolio
 entries_layout: grid
 classes: wide
 sort_by : number
-
 ---
 <!-- 3. Portfolio/Projects
 

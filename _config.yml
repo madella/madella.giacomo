@@ -44,8 +44,8 @@ defaults:
       layout: single
       author_profile: false
       share: false
-
-search: true
+markdown: GFM
+# search: true
 lunr:
   search_within_pages: true
 # sass:

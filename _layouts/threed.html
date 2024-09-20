@@ -52,7 +52,7 @@ classes: wide
                 <div id="loading">
                     <img id="loading-image" src="/assets/images/svg/spinner.svg" alt="Loading..." height="80px" width="80px"/>
                 </div>
-                <div class=stlviewer data-src="{{ /assets/models/box.stl | relative_url }}" data-value="{{ page.d_value }}">
+                <div class=stlviewer data-src="/assets/models/box.stl" data-value="{{ page.d_value }}">
                     <canvas id="glcanvas" width="50%" height="30%"></canvas>
                 </div><br>
             </div>
@@ -78,7 +78,7 @@ classes: wide
                 {% for type in page.m_filetypes %}
                     <br>
                     <!-- <a href="{{ site.url }}{{ page.m_filepath }}{{ page.m_filename }}.{{ type.filetype }}">{{ page.m_filename }}.{{ type.filetype }}</a> -->
-                    <a href="{{ /assets/models/box.stl | relative_url }}">{{ page.m_filename }}.{{ type.filetype }}</a>
+                    <a href="/assets/models/box.stl">{{ page.m_filename }}.{{ type.filetype }}</a>
                 {% endfor %}
             </p>
             <script src="{{ /assets/scripts/webgl.min.js | relative_url }}"></script>

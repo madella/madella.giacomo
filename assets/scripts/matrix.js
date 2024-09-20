@@ -7,23 +7,53 @@ class TextScramble {
         this.chars = 'µπ!<-_\\/()[]{}&?<—=^?#@________'
         this.update = this.update.bind(this)
     }
-    setText(newText,start_Random,end_Random) {
-        const oldText = this.el.innerText
-        const length = Math.max(oldText.length, newText.length)
-        const promise = new Promise((resolve) => this.resolve = resolve)
-        this.queue = []
-        for (let i = 0; i < length; i++) {
-            const from = oldText[i] || ''
-            const to = newText[i] || ''
-            const start = Math.floor(Math.random() * start_Random)
-            const end = start + Math.floor(Math.random() * end_Random)
-            this.queue.push({ from, to, start, end })
+
+    splitSentence(words) {
+        let sentences = [];
+        for (let i = 0; i < words.length; i += 4) {
+            sentences.push( words.slice(i, i + 4).join(' ') );
         }
-        cancelAnimationFrame(this.frameRequest)
-        this.frame = 0
-        this.update()
-        return promise
+        return sentences;
     }
+
+    setText(newText, start_Random, end_Random) {
+        let words = newText.split(' ');
+        if (words.length > 4) {
+            let nnText = this.splitSentence(words);
+            const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));    
+            let promiseChain = Promise.resolve();
+    
+            nnText.forEach((sentence) => {
+                promiseChain = promiseChain
+                    .then(() => this.setSingleText(sentence, start_Random, end_Random))
+                    .then(() => delay(700));
+            });
+            return promiseChain; // Restituisci la catena di promesse
+        } else {
+            return this.setSingleText(newText, start_Random, end_Random); // Chiamata originale
+        }
+    }
+
+    setSingleText(text, start_Random, end_Random) {
+        const oldText = this.el.innerText;
+        const length = Math.max(oldText.length, text.length);
+        const promise = new Promise((resolve) => (this.resolve = resolve));
+        this.queue = [];
+        
+        for (let i = 0; i < length; i++) {
+            const from = oldText[i] || '';
+            const to = text[i] || '';
+            const start = Math.floor(Math.random() * start_Random);
+            const end = start + Math.floor(Math.random() * end_Random);
+            this.queue.push({ from, to, start, end });
+        }
+        
+        cancelAnimationFrame(this.frameRequest);
+        this.frame = 0;
+        this.update();
+        return promise;
+    }
+
     update() {
         let output = ''
         let complete = 0
@@ -53,7 +83,7 @@ class TextScramble {
             this.frameRequest = setTimeout(() => {
                 this.frame++
                 this.update()
-            }, delay) // Aggiungi un ritardo di 50ms tra ogni frame
+            }, delay)
         }
     }
     randomChar() {
@@ -64,6 +94,11 @@ class TextScramble {
         '>_',
         'giacomo',
         'madella',
+    ]
+
+    let detti = [
+        'Impara l\'arte e mettila da parte' ,
+        'Better to have it and not need it than to need it and not have it' 
     ]
 
     const phrases_mtrx = [
@@ -85,31 +120,41 @@ class TextScramble {
     let counter =  0
     let previous = counter
     let mtrx = false
-    
+    let detti_counter = 0
+    let previous_detti = 0
 
     let next = () => {
-    if (mtrx){
-        fx.setText(phrases_mtrx[counter],10,30).then(() => {
-        setTimeout(next, 700)
-        })
-        counter = (counter + 1) 
-        if (counter > phrases_mtrx.length - 1){
-            mtrx=false
-            counter=0
+        if (mtrx){
+            fx.setText(phrases_mtrx[counter],10,30).then(() => {
+            setTimeout(next, 700)
+            })
+            counter = (counter + 1) 
+            if (counter > phrases_mtrx.length - 1){
+                mtrx=false
+                counter=0
+            }
         }
-    }
-    else {
-        fx.setText(phrases[counter],50,70).then(() => {
-        setTimeout(next, 3500)
-        })
-        while (previous == counter){
-        counter = Math.floor(Math.random() * phrases.length)
+        else if (Math.random() < 0.1 && $(window).width() > 250) {
+            while (detti_counter == previous_detti ) {
+                detti_counter = Math.floor(Math.random() * detti.length)
+            }
+            fx.setText(detti[detti_counter],10,30).then(() => {
+                setTimeout(next, 3500)
+                })
+            previous_detti =detti_counter
         }
-        previous=counter
-        if (Math.random() < 0.01 && $(window).width() > 250){ 
-            counter=0;
-            mtrx=true 
+        else{
+            fx.setText(phrases[counter],50,70).then(() => {
+            setTimeout(next, 3500)
+            })
+            while (previous == counter){
+            counter = Math.floor(Math.random() * phrases.length)
+            }
+            previous=counter
+            if (Math.random() < 0.01 && $(window).width() > 250){ 
+                counter=0;
+                mtrx=true 
+            }
         }
-    }
 }
 next()

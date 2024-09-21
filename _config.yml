@@ -45,7 +45,7 @@ defaults:
       author_profile: false
       share: false
 
-search: true
+# search: true
 lunr:
   search_within_pages: true
 # sass:

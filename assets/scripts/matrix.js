@@ -97,8 +97,7 @@ class TextScramble {
     ]
 
     let detti = [
-        'Impara l\'arte e mettila da parte' ,
-        'Better to have it and not need it than to need it and not have it' 
+        'Learn a trade for a rainy day' ,
     ]
 
     const phrases_mtrx = [

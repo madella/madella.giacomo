@@ -1,16 +1,16 @@
 ---
 layout: threed
 # p_title: Drawer Bracket
-d_value: 0.7
+d_value: 0.6
 m_filepath: /assets/models/
 m_filename: Box
-m_description: A simple box to manage (switch on and off) the individual elements (Arduino nano, Lights, Fans) individually.
+m_description: A simple box to manage the Arduino nano, Lights, Fans attached to my 3dprint enclosure.
 # m_detail: This item should be printed with PLA or ABS plastic.
 # m_cost: $0.21
 m_filetypes:
     - filetype: STL
-title: "Arduino controller"
-excerpt: "My First 3d design"
+title: "3dprinter box controller"
+excerpt: "Arduino box"
 header:
   teaser: /assets/images/DIY.jpg
 sidebar:

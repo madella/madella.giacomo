@@ -24,7 +24,7 @@ email: giacomo.madella@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Giacomo Madella's Website
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "madella.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://madella.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  madella
 
 collections:

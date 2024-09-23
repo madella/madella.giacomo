@@ -134,13 +134,15 @@ class TextScramble {
             }
         }
         else if (Math.random() < 0.1 && $(window).width() > 250) {
-            while (detti_counter == previous_detti ) {
-                detti_counter = Math.floor(Math.random() * detti.length)
+            if (detti.length > 1){
+                while (detti_counter == previous_detti ) {
+                    detti_counter = Math.floor(Math.random() * detti.length)
+                }
             }
             fx.setText(detti[detti_counter],10,30).then(() => {
                 setTimeout(next, 3500)
                 })
-            previous_detti =detti_counter
+            previous_detti = detti_counter
         }
         else{
             fx.setText(phrases[counter],50,70).then(() => {

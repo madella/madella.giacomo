@@ -16,7 +16,7 @@ You can email me at [giacomo.madella@gmail.com](mailto:giacomo.madella@gmail.com
 - [GitHub](https://github.com/madella)
 - [GitLab](https://gitlab.com/madella)
 - [Thingiverse](https://www.thingiverse.com/madella__)
-- [Instagram](https://www.instagram.com/madella__/)
+<!-- - [Instagram](https://www.instagram.com/madella__/) -->
 
 ---
 

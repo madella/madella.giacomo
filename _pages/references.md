@@ -22,7 +22,7 @@ Here, you'll find a collection of the certifications and credentials I've earned
 
 ![Certificate Image](/assets/certificates/cc.png)
 
----
+<!-- ---
 
 # [English](/assets/certificates/IELTS.jpg)
 **Issuing Organization:** IELTS  
@@ -31,7 +31,7 @@ Here, you'll find a collection of the certifications and credentials I've earned
 
 ![Certificate Image](/assets/certificates/IELTS.jpg)
 
----
+--- -->
 <!-- ### [Certificate Title 3](#)
 **Issuing Organization:** Organization Name  
 **Date Earned:** Month Year  

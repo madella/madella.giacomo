@@ -1,7 +1,7 @@
 ---
 layout: threed
 # p_title: Drawer Bracket
-d_value: 0.6
+d_value: 1.5
 m_filepath: /assets/models/
 m_filename: Box
 m_description: A simple box to manage the Arduino nano, Lights, Fans attached to my 3dprint enclosure.

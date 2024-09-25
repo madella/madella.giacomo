@@ -35,16 +35,19 @@ classes: wide
             padding: 10px;
             margin-bottom: 0;
             padding-bottom: 1px;
+            background-color: white;
         }
         .education,
         .experience {
             margin-bottom: 20px;
         }
+        #cc{
+            border-top: 1px solid #ddd;
+        }
         .two-column {
             display: flex;
             justify-content: space-between;
             margin-bottom: 15px;
-            /* border-bottom: 1px solid #ddd; */
         }
         .period {
             width: 20%;
@@ -57,16 +60,35 @@ classes: wide
     </style>
 </head>
 <body>
-    <h1 id="edu">Education</h1>
-    <div class="education">
-        <div id="eduColumn" class="two-column"> 
+    <h1 id="exp">Experiences</h1>
+    <div class="experience">
+        <div  class="two-column"> 
             <div class="period">2023 -        </div>
             <div class="details">
-                <strong>PhD in Computer Engineering | UniBo</strong><br>
-                Gaining experience in Power Management for HPC.
+                <strong>Research Fellow | PhD Computer Engineering | UniBo</strong><br>
+                Currently engaged in research as RISC-V architecture, accelerators for AI and HPC.
+            </div>
+        </div>
+        <div  class="two-column"> 
+            <div class="period">2023 -        </div>
+            <div class="details">
+                <strong>System Administration | MonteCimone RISCV</strong><br>
+                Ensured the operational stability of the MonteCimone RISC-V platform. My role involved hardware and software integration, AI system acceleration and performance optimization.
             </div>
         </div>
         <div class="two-column">
+            <div class="period">2021 - 2023</div>
+            <div class="details">
+                <strong>Driverless Team Member | UniBO MotorSport</strong><br>
+                MotorSport is a Bologna's university student association that takes part in various Formula SAE events, participating to MotoStudent competitions all over the world. In particular I joined the F1tenth race in Philadelphia and Rimini, by being in charge of the software infrastructure division for the AI section of our driverless car.
+            </div>
+        </div>
+    </div>
+
+    <h1 id="edu">Education</h1>
+    <div class="education">
+
+        <div id="expColumn" class="two-column">
             <div class="period">2021 - 2023</div>
             <div class="details">
                 <strong>Master's Degree in Computer Engineering | UniBo</strong><br>
@@ -87,25 +109,15 @@ classes: wide
                 Applied-science diploma.
             </div>
         </div>
-    </div>
-
-    <h1 id="exp"> Experience</h1>
-    <div class="experience">
-        <div id="expColumn" class="two-column">
-            <div class="period">2021 - 2023</div>
-            <div class="details">
-                <strong>Driverless Team Member | UniBO MotorSport</strong><br>
-                MotorSport is a Bologna's university student association that takes part in various Formula SAE events, participating to MotoStudent competitions all over the world. In particular I joined the F1tenth race in Philadelphia and Rimini, by being in charge of the software infrastructure division for the AI section of our driverless car.
-            </div>
-        </div>
-        <div class="two-column">
-            <div class="period">2023</div>
+        <div id="cc" class="two-column">
+            <div class="period">2023 - 6 months</div>
             <div class="details">
                 <strong>CyberChallenge IT | CCIT</strong><br>
                 CyberChallenge.IT is an extensive program comprising a series of competitions, exercises, and workshops led by industry experts, providing with hands-on experience in vulnerability analysis, penetration testing and cryptography.
             </div>
         </div>
     </div>
+
     <h1>Research & Conferences</h2>
     <div class="two-column">
         <div class="period">2023</div>

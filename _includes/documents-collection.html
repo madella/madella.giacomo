@@ -8,11 +8,7 @@
   {% assign entries = entries | reverse %}
 {% endif %}
 
-{%- for post in entries -%}
-  {% include archive-single.html %}
-{%- endfor -%}
-
-{% if page.url != "/3dprint/" %}
+{% if page.url != "/3dprint/" and page.url != "/studies/" %}
 <div id="inception" class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork"{% if post.locale %} lang="{{ post.locale }}"{% endif %}>
     <div class="archive__item-teaser"><iframe clas="grid__item" src="{{ '/this' | relative_url }}" style="position: relative; height: 100%; width: 100%; border:none;"></iframe>
@@ -30,3 +26,7 @@
   </article>
 </div>
 {% endif %}
+
+{%- for post in entries -%}
+  {% include archive-single.html %}
+{%- endfor -%}

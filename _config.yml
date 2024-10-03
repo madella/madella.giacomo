@@ -34,6 +34,10 @@ collections:
   3dprint:
     output: true
     permalink: /:collection/:path/
+  studies:
+    output: true
+    permalink: /:collection/:path/
+
 
 defaults:
   # _portfolio

@@ -12,10 +12,34 @@
 
 <div class="{{ include.type | default: 'list' }}__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork"{% if post.locale %} lang="{{ post.locale }}"{% endif %}>
-    {% if include.type == "grid" and teaser %}
-      <div class="archive__item-teaser">
-        <img src="{{ teaser | relative_url }}" alt="">
-      </div>
+    {% if page.url == "/3dprint/" %}
+        <script src="/assets/scripts/webgl.min.js"></script>
+        <script src="/assets/scripts/three.min.js"></script>
+        <script src="/assets/scripts/stlloader.min.js"></script>
+        <script src="/assets/scripts/orbitcontrols.min.js"></script>
+        <script src="/assets/scripts/stlviewer.js"></script>
+        <script type=text/javascript>
+                        window.onload = function() {
+                            STLViewerEnable("stlviewer");
+                        }
+        </script>
+          <class id="c1" name="cntrl" />
+          <class id="r1" name="model" />
+          <class id="r2" name="model" />
+          <div style="width: 100%; text-align: center;">
+          <div id="loading">
+              <img id="loading-image" src="/assets/images/svg/spinner.svg" alt="Loading..." height="80px" width="80px" />
+          </div>
+          <div class=stlviewer data-src="/assets/models/Box.STL" data-value="0.7">
+              <canvas id="glcanvas" width="100%" height="100%"></canvas>
+          </div><br>
+    </div>
+    {%else%}
+      {% if include.type == "grid" and teaser %}
+        <div class="archive__item-teaser">
+          <img src="{{ teaser | relative_url }}" alt="">
+        </div>
+      {% endif %}
     {% endif %}
     <h2 class="archive__item-title no_toc" itemprop="headline">
       {% if post.link %}

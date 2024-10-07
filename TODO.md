@@ -1,5 +1,4 @@
 # Todo sito
-- script matematico solo nel layout dei colelction
 - finire Regression (GD in poly)
 - fare anche quantom in MD anziche in html
 - MotorSport

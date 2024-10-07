@@ -17,8 +17,6 @@ classes: wide
 
 Linear regression is one of the simplest and most co\thetamonly used algorithms for predicting a continuous output variable.
 
-
-
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
@@ -37,10 +35,10 @@ y = \theta_0 + \theta_1x
 $$
 
 Where:
-- $ y $ is the dependent variable (the variable we want to predict).
-- $ x $ is the independent variable (the input variable).
-- $\theta_1$ is the slope of the line (how much $ y $ changes with $ x $).
-- $\theta_0$ is the intercept (the value of $ y $ when $ x = 0 $).
+- $$ y $$ is the dependent variable (the variable we want to predict).
+- $$ x $$ is the independent variable (the input variable).
+- $$\theta_1$$ is the slope of the line (how much $$ y $$ changes with $$ x $$).
+- $$\theta_0$$ is the intercept (the value of $$ y $$ when $$ x = 0 $$).
 
 ### Assumptions
 - There is a linear relationship between the dependent and independent variables.
@@ -87,13 +85,13 @@ J(\theta_1, \theta_0) = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
 $$
 
 Where:
-- $ J(\theta_1, \theta_0) $ is the cost function to minimize.
-- $ n $ is the number of data points.
-- $ y_i $ is the actual value of the dependent variable for the $ i^{th} $ data point.
-- $ x_i $ is the value of the independent variable for the $ i^{th} $ data point.
-- $ \theta_1x_i +\theta_0$ is the predicted value of $ y $ for the $ i^{th} $ data point.
+- $$ J(\theta_1, \theta_0) $$ is the cost function to minimize.
+- $$ n $$ is the number of data points.
+- $$ y_i $$ is the actual value of the dependent variable for the $$ i^{th} $$ data point.
+- $$ x_i $$ is the value of the independent variable for the $$ i^{th} $$ data point.
+- $$ \theta_1x_i +\theta_0$$ is the predicted value of $$ y $$ for the $$ i^{th} $$ data point.
 
-The objective of linear regression is to find the values of $\theta_1$ (slope) and $\theta_0$ (intercept) that minimize this cost function. This tipically can be done with 2 approach:
+The objective of linear regression is to find the values of $$\theta_1$$ (slope) and $$\theta_0$$ (intercept) that minimize this cost function. This tipically can be done with 2 approach:
 1. Analytic approach
 2. Gradient Descent
 
@@ -110,7 +108,7 @@ $$
 \frac{\partial\ J(\hat{\theta}_0, \hat{\theta}_1)}{\partial \hat{\theta}_0} = %-2 \sum_{i=1}^{n} \left( y_i - \hat{\theta}_0 - \hat{\theta}_1 x_i \right)
 $$ -->
 
-To find the estimate of $ \hat{\theta}_0 $, we need to take the derivative of the cost function $ J(\hat{\theta}_0, \hat{\theta}_1) $ with respect to $ \hat{\theta}_0 $.
+To find the estimate of $$ \hat{\theta}_0 $$, we need to take the derivative of the cost function $$ J(\hat{\theta}_0, \hat{\theta}_1) $$ with respect to $$ \hat{\theta}_0 $$.
 
 We start with:
 
@@ -143,14 +141,14 @@ $$
 \sum_{i=1}^{n} y_i - N \hat{\theta}_0 - \hat{\theta}_1 \sum_{i=1}^{n} x_i = 0
 $$
 
-Now, solve for $ \hat{\theta}_0 $:
+Now, solve for $$ \hat{\theta}_0 $$:
 
 $$
 \hat{\theta}_0 = \bar{y} - \hat{\theta}_1 \bar{x}
 $$
 
 
-This gives our intercept estimate, $ \hat{\theta}_0 $, in terms of the slope estimate, $ \hat{\theta}_1 $. 
+This gives our intercept estimate, $$ \hat{\theta}_0 $$, in terms of the slope estimate, $$ \hat{\theta}_1 $$. 
 
 --- 
 To find the slope estimate, again start by taking the derivative of the RSS:
@@ -159,7 +157,7 @@ $$
 \frac{\partial J(\hat{\theta}_0, \hat{\theta}_1)}{\partial \hat{\theta}_1} = - 2 \sum_{i=1}^{n} \left( y_i - \hat{\theta}_0 - \hat{\theta}_1 x_i \right) x_i
 $$
 
-Setting this equal to 0 and substituting for $ \hat{\theta}_0 $ we get
+Setting this equal to 0 and substituting for $$ \hat{\theta}_0 $$ we get
 
 $$
 -2 \sum_{i=1}^{n} \left( y_i - \left( \bar{y} - \hat{\theta}_1 \bar{x} \right) - \hat{\theta}_1 x_i \right) x_i = 0
@@ -175,7 +173,7 @@ Since
 $$
 \sum_{i=1}^{n}c(z_i -\bar{z}) = 0 
 $$
-for any costant $c$ and collection $z=z_1,...,z_i$ with $\bar{z}$ mean of $z$, and since $ \bar{x} $ is a costant, we can subtract as follow:
+for any costant $$c$$ and collection $$z=z_1,...,z_i$$ with $$\bar{z}$$ mean of $$z$$, and since $$ \bar{x} $$ is a costant, we can subtract as follow:
 
 $$
 \hat{\theta}_1  =\frac{\sum_{i=1}^{n} \left( y_i - \bar{y} \right) x_i - \bar{x}( y_i - \bar{y}) }{\sum_{i=1}^{n} \left( x_i - \bar{x} \right) x_i - \bar{x}(x_i - \bar{x}) }
@@ -235,9 +233,9 @@ y = \theta^\intercal x
 $$
 
 Where:
-- $ y $ is the dependent variable.
-- $ x = 1,x_1, x_2, \ldots, x_p $ are the independent variables (features).
-- $ \theta = \theta_0, \theta_1, \ldots, \theta_p $ are the parameters to be estimated (weights or coefficients).
+- $$ y $$ is the dependent variable.
+- $$ x = 1,x_1, x_2, \ldots, x_p $$ are the independent variables (features).
+- $$ \theta = \theta_0, \theta_1, \ldots, \theta_p $$ are the parameters to be estimated (weights or coefficients).
 
 We need to get the multivariate form:
 $$
@@ -282,7 +280,7 @@ J(\hat{\theta}) &= (y^\intercal - (X\hat{\theta})^\intercal)(y - X\hat{\theta}) 
 \end{aligned}
 $$
 
-now, minimize using the proprierties $ \frac{\partial}{\partial \theta}(\theta^\intercal A \theta) = A \theta + A^\intercal \theta$ and where $A$=$X^\intercal X$ is symmetrical
+now, minimize using the proprierties $$ \frac{\partial}{\partial \theta}(\theta^\intercal A \theta) = A \theta + A^\intercal \theta$$ and where $$A$$=$$X^\intercal X$$ is symmetrical
 
 $$
 \frac{\partial J(\theta)}{\partial \theta} = -2 X^\intercal y + 2 X^\intercal X\theta
@@ -301,7 +299,7 @@ $$
 
 ## Gradient Descent
 
-Gradient descent is an optimization algorithm used to find the minimum of the cost function. It works by iteratively adjusting the parameters $\theta_1$ and $\theta_0$ in the direction that reduces the cost function.
+Gradient descent is an optimization algorithm used to find the minimum of the cost function. It works by iteratively adjusting the parameters $$\theta_1$$ and $$\theta_0$$ in the direction that reduces the cost function.
 
 The update rules for gradient descent are:
 
@@ -313,8 +311,8 @@ $$
 $$
 
 Where:
-- $ \alpha $ is the learning rate, which controls the step size of the updates.
-- $ \frac{\partial J(\theta_1, \theta_0)}{\partial \theta_1} $ and $ \frac{\partial J(\theta_1, \theta_0)}{\partial \theta_0} $ are the partial derivatives of the cost function with respect to $\theta_1$ and $\theta_0$, respectively.
+- $$ \alpha $$ is the learning rate, which controls the step size of the updates.
+- $$ \frac{\partial J(\theta_1, \theta_0)}{\partial \theta_1} $$ and $$ \frac{\partial J(\theta_1, \theta_0)}{\partial \theta_0} $$ are the partial derivatives of the cost function with respect to $$\theta_1$$ and $$\theta_0$$, respectively.
 
 The partial derivatives are calculated as follows:
 
@@ -325,7 +323,7 @@ $$
 \frac{\partial J(\theta_1, \theta_0)}{\partial \theta_0} = -\frac{2}{n} \sum_{i=1}^{n} (y_i - (\theta_1x_i + \theta_0))
 $$
 
-These derivatives represent the gradient (or slope) of the cost function in the direction of $\theta_1$ and $\theta_0$. By updating $\theta_1$ and $\theta_0$ using these derivatives, we can minimize the cost function and find the optimal parameters for the regression line.
+These derivatives represent the gradient (or slope) of the cost function in the direction of $$\theta_1$$ and $$\theta_0$$. By updating $$\theta_1$$ and $$\theta_0$$ using these derivatives, we can minimize the cost function and find the optimal parameters for the regression line.
 
 
 
@@ -366,7 +364,7 @@ for i in range(1000):
 ### Multivariate GD
 
 
-The cost function is similar but generalized for multiple variables (the $\frac{1}{2}$ is usually included for further simplification when the derivative is applied):
+The cost function is similar but generalized for multiple variables (the $$\frac{1}{2}$$ is usually included for further simplification when the derivative is applied):
 
 Defined $$ \hat{y} = \hat{\theta}^\intercal x $$
 
@@ -375,8 +373,8 @@ J(\hat{\theta}) = \frac{1}{2n} \sum_{i=1}^{n} (\hat{y}^{(i)} - y^{(i)})^2
 $$
 
 Where:
-- $ \hat{y}^{(i)} $ is the hypothesis function (prediction) for the $ i^{th} $ data point.
-- $ y^{(i)} $ is the actual value of the dependent variable for the $ i^{th} $ data point.
+- $$ \hat{y}^{(i)} $$ is the hypothesis function (prediction) for the $$ i^{th} $$ data point.
+- $$ y^{(i)} $$ is the actual value of the dependent variable for the $$ i^{th} $$ data point.
 
 The gradient descent update rules become:
 

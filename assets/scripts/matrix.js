@@ -133,7 +133,7 @@ class TextScramble {
                 counter=0
             }
         }
-        else if (Math.random() < 0.1 && $(window).width() > 250) {
+        else if (Math.random() < 0.05 && $(window).width() > 250) {
             if (detti.length > 1){
                 while (detti_counter == previous_detti ) {
                     detti_counter = Math.floor(Math.random() * detti.length)

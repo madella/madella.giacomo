@@ -27,12 +27,12 @@
           <class id="r1" name="model" />
           <class id="r2" name="model" />
           <div style="width: 100%; text-align: center;">
-          <div id="loading">
+          <div class="loading">
               <img id="loading-image" src="/assets/images/svg/spinner.svg" alt="Loading..." height="80px" width="80px" />
           </div>
-          <div class=stlviewer data-src="/assets/models/Box.STL" data-value="0.7">
-              <canvas id="glcanvas" width="100%" height="100%"></canvas>
-          </div><br>
+          <div class=stlviewer data-src="/assets/models/{{post.m_filename}}.STL" data-value="{{post.d_value}}">
+              <canvas class="glcanvas" width="100%" height="100%"></canvas>
+          </div>
     </div>
     {%else%}
       {% if include.type == "grid" and teaser %}

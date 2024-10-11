@@ -83,8 +83,8 @@ class STLViewerInstance {
             polygonOffsetUnits: 1
         });
         const material2 = new THREE.MeshPhongMaterial({
-            color: 0x448ead,
-            specular: 0x448ead,
+            color: 0x6c9e00,
+            specular: 0x415f00,
             shininess: 100.0,
         });
 

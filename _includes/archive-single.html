@@ -43,7 +43,7 @@
     {% endif %}
     <h2 class="archive__item-title no_toc" itemprop="headline">
       {% if post.link %}
-        <a href="{{ post.link }}">{{ title }}</a>
+        <a href="{{ post.link }}">{{ title }}</a>  {% if post.link == "/3dprint/" or post.link == "/studies/" %} <i style="font-size: 0.73em; color:lightgrey; float: right;" class="fa-solid fa-folder-tree"></i> {% endif %}
       {% else %}
         <a href="{{ post.url | relative_url }}" rel="permalink">{{ title }}</a>
       {% endif %}

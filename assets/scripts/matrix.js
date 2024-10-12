@@ -37,7 +37,11 @@ class TextScramble {
     setSingleText(text, start_Random, end_Random, braket) {
         const oldText = this.el.innerText;
         if (braket) {
-            text= '|' + text + "⟩";
+            if (text === 'giacomo') {
+                text = `⟨giacomo|`;
+            } else if (text === 'madella') {
+                text = `|madella⟩`;
+            }
         }
         const length = Math.max(oldText.length, text.length);
         const promise = new Promise((resolve) => (this.resolve = resolve));
@@ -66,7 +70,12 @@ class TextScramble {
             let { from, to, start, end, char } = this.queue[i]
             if (this.frame >= end) {
                 complete++
-                output += to
+                if (to === "|" || to === "⟨" || to === "⟩"){
+                    output += `<span class="dud">${to}</span>`  
+                }
+                else{
+                    output += to
+                }
             } else if (this.frame >= start) {
                 if (!char || Math.random() < 0.28) {
                     char = this.randomChar()
@@ -107,7 +116,7 @@ class TextScramble {
     const phrases_mtrx = [
         "Come as you are",
         "as you were",
-        "as I want you to be",
+        "as i want you to be",
         "as a friend",
         "as a friend",
         "as an old enemy",
@@ -119,7 +128,8 @@ class TextScramble {
 
     const el = document.querySelector('.text')
     const fx = new TextScramble(el)
-
+ 
+    let braket=false
     let counter =  0
     let previous = counter
     let mtrx = false
@@ -129,7 +139,7 @@ class TextScramble {
     let next = () => {
         if (mtrx){
             fx.setText(phrases_mtrx[counter],10,30,false).then(() => {
-            setTimeout(next, 700)
+            setTimeout(next, 900)
             })
             counter = (counter + 1) 
             if (counter > phrases_mtrx.length - 1){
@@ -149,7 +159,9 @@ class TextScramble {
             previous_detti = detti_counter
         }
         else{
-            fx.setText(phrases[counter],50,70,false).then(() => {
+            if (Math.random() < 0.33){braket=true;}
+            else {braket = false;}
+            fx.setText(phrases[counter],50,70,braket).then(() => {
             setTimeout(next, 3500)
             })
             while (previous == counter){

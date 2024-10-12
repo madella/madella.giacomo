@@ -1,6 +1,6 @@
 ---
 title: "Driverless Motorsport"
-excerpt: "Driverless team of UniBo Motorsport"
+excerpt: "Extra university project in driverless team of UniBo Motorsport"
 header:
   image: assets/images/driverless.jpg
   teaser: assets/images/ms.png

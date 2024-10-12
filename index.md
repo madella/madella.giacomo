@@ -30,7 +30,7 @@ I’m extremely curious, and that’s why I love learning new things all the tim
 
 I’m not someone who enjoys writing about myself* — I’d rather roll up my sleeves and get things done.
 
-When I’m not working on my PhD, you’ll probably find me working on new projects, 3D printing, listening to music, or studying new fields.
+When I’m not working on my PhD, you’ll probably find me working on new projects, 3D printing, listening to music, or <a href="/studies/">studying</a> new fields.
 
 In the <a href="/projects/" class="glitch" data-text="Geeky">Project </a> section, you’ll find some of the projects I’ve completed over the past few years. I’ll do my best to include them all and keep them updated.
 

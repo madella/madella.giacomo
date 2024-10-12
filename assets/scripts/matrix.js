@@ -1,4 +1,4 @@
-
+const MAXWORDS=3
 
 class TextScramble {
     constructor(el) {
@@ -10,16 +10,21 @@ class TextScramble {
 
     splitSentence(words) {
         let sentences = [];
-        for (let i = 0; i < words.length; i += 4) {
-            sentences.push( words.slice(i, i + 4).join(' ') );
+        if (words.length % MAXWORDS === 1) { // if there's only one word more
+            sentences.push(words.slice(0, MAXWORDS).join(' '));
+            sentences.push(words.slice(MAXWORDS).join(' '));
+        } else {
+            for (let i = 0; i < words.length; i += MAXWORDS) {
+                sentences.push(words.slice(i, i + MAXWORDS).join(' '));
+            }
         }
+    
         return sentences;
     }
 
     setText(newText, start_Random, end_Random,braket) {
         let words = newText.split(' ');
-        if (words.length > 4 && words[words.length-1] != "♫") {
-            console.log(words[words.length-1])
+        if (words.length > MAXWORDS && words[words.length-1] != "♫") {
             let nnText = this.splitSentence(words);
             const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));    
             let promiseChain = Promise.resolve();
@@ -27,7 +32,7 @@ class TextScramble {
             nnText.forEach((sentence) => {
                 promiseChain = promiseChain
                     .then(() => this.setSingleText(sentence, start_Random, end_Random, braket))
-                    .then(() => delay(700));
+                    .then(() => delay(1000));
             });
             return promiseChain; 
         } else {

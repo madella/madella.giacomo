@@ -16,14 +16,7 @@ classes: wide
     });
   });
 </script>
-
-<!-- 
-2. About Me
-	•	Biography: Share your story, including your background, education, and how you got into your field. Keep it professional but add personal touches.
-	•	Mission and Values: Explain what drives you professionally or personally, and what values are important to you.
-	•	Fun Facts or Hobbies: Include a few personal details that show your personality—hobbies, passions, or interesting trivia.
-
-Tips for Writing:
+<!-- Tips for Writing:
 
 	•	Be Authentic: Write in your own voice, and let your personality shine through.
 	•	Keep it Simple: Clear, concise language works best. Avoid jargon unless it’s relevant to your audience.
@@ -31,7 +24,9 @@ Tips for Writing:
 	•	Call to Action: Encourage visitors to take a specific action, like contacting you, viewing your portfolio, or following you on social media. -->
 
 
-Hi! I’m Giacomo, a 2<span class="glitch" data-text="6">5</span> years old guy, passionate about a whole bunch of things: technology, electronics, computer science, physics, and astronomy. I’m extremely curious, and that’s why I love learning new things all the time, whether it’s diving into a new project or exploring a completely different field.
+Hi! I’m Giacomo, a 2<span class="glitch" data-text="6">5</span> years old guy, passionate about a whole bunch of things: technology, electronics, computer science, physics, and astronomy. 
+
+I’m extremely curious, and that’s why I love learning new things all the time, whether it’s diving into a new project or exploring a completely different field.
 
 I’m not someone who enjoys writing about myself* — I’d rather roll up my sleeves and get things done.
 

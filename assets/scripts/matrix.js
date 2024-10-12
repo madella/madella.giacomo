@@ -18,7 +18,8 @@ class TextScramble {
 
     setText(newText, start_Random, end_Random,braket) {
         let words = newText.split(' ');
-        if (words.length > 4) {
+        if (words.length > 4 && words[words.length-1] != "♫") {
+            console.log(words[words.length-1])
             let nnText = this.splitSentence(words);
             const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));    
             let promiseChain = Promise.resolve();
@@ -111,20 +112,21 @@ class TextScramble {
 
     let detti = [
         'Learn a trade for a rainy day' ,
+        'Time moves slowly, but passes quickly'
     ]
 
     const phrases_mtrx = [
-        "Come as you are",
-        "as you were",
-        "as i want you to be",
-        "as a friend",
-        "as a friend",
-        "as an old enemy",
-        "take your time",
-        "hurry up",
-        "choice is yours", 
-        "don't be late"
-    ]
+        "♫ Come as you are ♫",
+        "♫ as you were ♫",
+        "♫ as i want you to be ♫",
+        "♫ as a friend ♫",
+        "♫ as a friend ♫",
+        "♫ as an old enemy ♫",
+        "♫ take your time ♫",
+        "♫ hurry up ♫",
+        "♫ choice is yours ♫", 
+        "♫ don't be late ♫"
+    ] 
 
     const el = document.querySelector('.text')
     const fx = new TextScramble(el)
@@ -139,7 +141,7 @@ class TextScramble {
     let next = () => {
         if (mtrx){
             fx.setText(phrases_mtrx[counter],10,30,false).then(() => {
-            setTimeout(next, 900)
+            setTimeout(next, 1700)
             })
             counter = (counter + 1) 
             if (counter > phrases_mtrx.length - 1){
@@ -159,16 +161,16 @@ class TextScramble {
             previous_detti = detti_counter
         }
         else{
-            if (Math.random() < 0.33){braket=true;}
-            else {braket = false;}
             fx.setText(phrases[counter],50,70,braket).then(() => {
             setTimeout(next, 3500)
             })
             while (previous == counter){
             counter = Math.floor(Math.random() * phrases.length)
             }
+            if (Math.random() < 0.33 && counter != 0){braket=true;}
+            else {braket = false;}
             previous=counter
-            if (Math.random() < 0.01 && $(window).width() > 250){ 
+            if (Math.random() < 0.05 && $(window).width() > 250){ 
                 counter=0;
                 mtrx=true 
             }

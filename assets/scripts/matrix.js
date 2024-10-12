@@ -3,8 +3,8 @@
 class TextScramble {
     constructor(el) {
         this.el = el
-        // █
-        this.chars = 'µπ!<-_\\/()[]{}&?<—=^?#@________'
+        // █ ⟨⟩
+        this.chars = 'µπ!<-_\\/()[]{}&?<—=^?#@________αβγδεηθΦκλνοπρστυφψω'
         this.update = this.update.bind(this)
     }
 
@@ -16,7 +16,7 @@ class TextScramble {
         return sentences;
     }
 
-    setText(newText, start_Random, end_Random) {
+    setText(newText, start_Random, end_Random,braket) {
         let words = newText.split(' ');
         if (words.length > 4) {
             let nnText = this.splitSentence(words);
@@ -25,20 +25,24 @@ class TextScramble {
     
             nnText.forEach((sentence) => {
                 promiseChain = promiseChain
-                    .then(() => this.setSingleText(sentence, start_Random, end_Random))
+                    .then(() => this.setSingleText(sentence, start_Random, end_Random, braket))
                     .then(() => delay(700));
             });
-            return promiseChain; // Restituisci la catena di promesse
+            return promiseChain; 
         } else {
-            return this.setSingleText(newText, start_Random, end_Random); // Chiamata originale
+            return this.setSingleText(newText, start_Random, end_Random, braket); 
         }
     }
 
-    setSingleText(text, start_Random, end_Random) {
+    setSingleText(text, start_Random, end_Random, braket) {
         const oldText = this.el.innerText;
+        if (braket) {
+            text= '|' + text + "⟩";
+        }
         const length = Math.max(oldText.length, text.length);
         const promise = new Promise((resolve) => (this.resolve = resolve));
         this.queue = [];
+
         
         for (let i = 0; i < length; i++) {
             const from = oldText[i] || '';
@@ -124,7 +128,7 @@ class TextScramble {
 
     let next = () => {
         if (mtrx){
-            fx.setText(phrases_mtrx[counter],10,30).then(() => {
+            fx.setText(phrases_mtrx[counter],10,30,false).then(() => {
             setTimeout(next, 700)
             })
             counter = (counter + 1) 
@@ -139,13 +143,13 @@ class TextScramble {
                     detti_counter = Math.floor(Math.random() * detti.length)
                 }
             }
-            fx.setText(detti[detti_counter],10,30).then(() => {
+            fx.setText(detti[detti_counter],10,30,false).then(() => {
                 setTimeout(next, 3500)
                 })
             previous_detti = detti_counter
         }
         else{
-            fx.setText(phrases[counter],50,70).then(() => {
+            fx.setText(phrases[counter],50,70,false).then(() => {
             setTimeout(next, 3500)
             })
             while (previous == counter){

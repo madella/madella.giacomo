@@ -3,7 +3,6 @@
 {% else %}
   {% assign teaser = site.teaser %}
 {% endif %}
-
 {% if post.id %}
   {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
 {% else %}
@@ -12,7 +11,7 @@
 
 <div class="{{ include.type | default: 'list' }}__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork"{% if post.locale %} lang="{{ post.locale }}"{% endif %}>
-    {% if page.url == "/3dprint/" %}
+    {% if page.stlview %}
         <script src="/assets/scripts/webgl.min.js"></script>
         <script src="/assets/scripts/three.min.js"></script>
         <script src="/assets/scripts/stlloader.min.js"></script>
@@ -42,12 +41,14 @@
       {% endif %}
     {% endif %}
     <h2 class="archive__item-title no_toc" itemprop="headline">
-      {% if post.link %}
-        <a href="{{ post.link }}">{{ title }}</a>  {% if post.link == "/3dprint/" or post.link == "/studies/" %} <i style="font-size: 0.73em; color:lightgrey; float: right;" class="fa-solid fa-folder-tree"></i> {% endif %}
+      {% if post.classes == "todo" %}
       {% else %}
-        <a href="{{ post.url | relative_url }}" rel="permalink">{{ title }}</a>
+        {% if post.link %}
+          <a href="{{ post.link }}">{{ title }}</a>  {% if post.subcollection %} <i style="font-size: 0.73em; color:lightgrey; float: right;" class="fa-solid fa-folder-tree"></i> {% endif %}
+        {% else %}
+          <a href="{{ post.url | relative_url }}" rel="permalink">{{ title }}</a>
+        {% endif %}
       {% endif %}
-      
     </h2>
     {% include page__meta.html type=include.type %}
     {% if post.excerpt %}<p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify | strip_html | truncate: 160 }}</p>{% endif %}

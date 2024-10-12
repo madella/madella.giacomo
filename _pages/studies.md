@@ -8,6 +8,7 @@ collection: studies
 entries_layout: grid
 classes: wide
 sort_by : number
+subcollection: true
 # header:
 #   image: /assets/images/3dprinter.jpg
 #   teaser: /assets/images/3dpreview.jpg

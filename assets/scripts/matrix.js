@@ -1,4 +1,4 @@
-const MAXWORDS=3
+const MAXWORDS = 3
 
 class TextScramble {
     constructor(el) {
@@ -18,25 +18,26 @@ class TextScramble {
                 sentences.push(words.slice(i, i + MAXWORDS).join(' '));
             }
         }
-    
+
         return sentences;
     }
 
-    setText(newText, start_Random, end_Random,braket) {
+    setText(newText, start_Random, end_Random, braket) {
         let words = newText.split(' ');
-        if (words.length > MAXWORDS && words[words.length-1] != "♫") {
+        if (words.length > MAXWORDS && words[words.length - 1] != "♫") {
+            console.log(words[words.length - 1])
             let nnText = this.splitSentence(words);
-            const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));    
+            const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
             let promiseChain = Promise.resolve();
-    
+
             nnText.forEach((sentence) => {
                 promiseChain = promiseChain
                     .then(() => this.setSingleText(sentence, start_Random, end_Random, braket))
                     .then(() => delay(1000));
             });
-            return promiseChain; 
+            return promiseChain;
         } else {
-            return this.setSingleText(newText, start_Random, end_Random, braket); 
+            return this.setSingleText(newText, start_Random, end_Random, braket);
         }
     }
 
@@ -53,7 +54,7 @@ class TextScramble {
         const promise = new Promise((resolve) => (this.resolve = resolve));
         this.queue = [];
 
-        
+
         for (let i = 0; i < length; i++) {
             const from = oldText[i] || '';
             const to = text[i] || '';
@@ -61,7 +62,7 @@ class TextScramble {
             const end = start + Math.floor(Math.random() * end_Random);
             this.queue.push({ from, to, start, end });
         }
-        
+
         cancelAnimationFrame(this.frameRequest);
         this.frame = 0;
         this.update();
@@ -76,17 +77,17 @@ class TextScramble {
             let { from, to, start, end, char } = this.queue[i]
             if (this.frame >= end) {
                 complete++
-                if (to === "|" || to === "⟨" || to === "⟩"){
-                    output += `<span class="dud">${to}</span>`  
+                if (to === "|" || to === "⟨" || to === "⟩" || to === "♫") {
+                    output += `<span class="dud">${to}</span>`
                 }
-                else{
+                else {
                     output += to
                 }
             } else if (this.frame >= start) {
                 if (!char || Math.random() < 0.28) {
                     char = this.randomChar()
                     this.queue[i].char = char
-                    }
+                }
                 output += `<span class="dud">${char}</span>`
             } else {
                 output += from
@@ -98,7 +99,7 @@ class TextScramble {
         } else {
             // this.frameRequest = requestAnimationFrame(this.update)
             // this.frame++
-            delay += ( Math.random() * 10 ) - 5
+            delay += (Math.random() * 10) - 5
             this.frameRequest = setTimeout(() => {
                 this.frame++
                 this.update()
@@ -108,77 +109,109 @@ class TextScramble {
     randomChar() {
         return this.chars[Math.floor(Math.random() * this.chars.length)]
     }
+}
+const phrases = [
+    '>_',
+    'giacomo',
+    'madella'
+]
+
+const detti = [
+    'Learn a trade for a rainy day',
+    'Time moves slowly, but passes quickly'
+]
+
+const phrases_mtrx = [
+    "♫ Come as you are ♫",
+    "♫ as you were ♫",
+    "♫ as i want you to be ♫",
+    "♫ as a friend ♫",
+    "♫ as a friend ♫",
+    "♫ as an old enemy ♫",
+    "♫ take your time ♫",
+    "♫ hurry up ♫",
+    "♫ choice is yours ♫",
+    "♫ don't be late ♫"
+]
+var entropy=0;
+var effEntropy=0;
+const el = document.querySelector('.text')
+const fx = new TextScramble(el)
+var overFinished = true
+let screen = $(window).width() > 250
+el.addEventListener('mouseover', () => {
+    if (overFinished && screen) {
+        entropy+=1;
+        overFinished = false;
+        effEntropy=((1.65*entropy)*effEntropy.toString().length).toFixed(2);
+        fx.setText(`S ≈ ${effEntropy}`, 50, 70, false).then(() => {
+            setTimeout(() => {overFinished = true;next();}, 3500);
+        })
     }
-    let phrases = [
-        '>_',
-        'giacomo',
-        'madella',
-    ]
+});
 
-    let detti = [
-        'Learn a trade for a rainy day' ,
-        'Time moves slowly, but passes quickly'
-    ]
+let anim="default"
+let braket = false
+let counter = 0
+let previous = counter
+let detti_counter = 0
+let previous_detti = 0
 
-    const phrases_mtrx = [
-        "♫ Come as you are ♫",
-        "♫ as you were ♫",
-        "♫ as i want you to be ♫",
-        "♫ as a friend ♫",
-        "♫ as a friend ♫",
-        "♫ as an old enemy ♫",
-        "♫ take your time ♫",
-        "♫ hurry up ♫",
-        "♫ choice is yours ♫", 
-        "♫ don't be late ♫"
-    ] 
+//5.88 bits per character but 28% of char change
+//1.65 bits per character ≈ 39.6 bits 
 
-    const el = document.querySelector('.text')
-    const fx = new TextScramble(el)
- 
-    let braket=false
-    let counter =  0
-    let previous = counter
-    let mtrx = false
-    let detti_counter = 0
-    let previous_detti = 0
-
-    let next = () => {
-        if (mtrx){
-            fx.setText(phrases_mtrx[counter],10,30,false).then(() => {
-            setTimeout(next, 1700)
+let next = () => {
+    if (!overFinished){return;}
+    let rand = Math.random()
+    screen = $(window).width() > 250
+    switch (anim) {
+        case "song": {
+            fx.setText(phrases_mtrx[counter], 10, 30, false).then(() => {
+                setTimeout(next, 1700)
             })
-            counter = (counter + 1) 
-            if (counter > phrases_mtrx.length - 1){
-                mtrx=false
-                counter=0
+            counter = (counter + 1)
+            if (counter > phrases_mtrx.length - 1) {
+                anim="default"
+                counter = 0
+                previous = 0
+                overFinished = true;
             }
+            break;
         }
-        else if (Math.random() < 0.015 && $(window).width() > 250) {
-            if (detti.length > 1){
-                while (detti_counter == previous_detti ) {
+        case "idiom": {
+            if (detti.length > 1) {
+                while (detti_counter == previous_detti) {
                     detti_counter = Math.floor(Math.random() * detti.length)
                 }
             }
-            fx.setText(detti[detti_counter],10,30,false).then(() => {
+            fx.setText(detti[detti_counter], 10, 30, false).then(() => {
                 setTimeout(next, 3500)
-                })
-            previous_detti = detti_counter
-        }
-        else{
-            fx.setText(phrases[counter],50,70,braket).then(() => {
-            setTimeout(next, 3500)
             })
-            while (previous == counter){
-            counter = Math.floor(Math.random() * phrases.length)
-            }
-            if (Math.random() < 0.33 && counter != 0){braket=true;}
-            else {braket = false;}
-            previous=counter
-            if (Math.random() < 0.025 && $(window).width() > 250){ 
-                counter=0;
-                mtrx=true 
-            }
+            previous_detti = detti_counter
+            overFinished = true;
+            break;
         }
+        default: {
+            fx.setText(phrases[counter], 50, 70, braket).then(() => {
+                setTimeout(next, 3500)
+            })
+            while (previous == counter) {
+                counter = Math.floor(Math.random() * phrases.length)
+            }
+
+            braket = rand < 0.33 && counter !== 0;
+
+            previous = counter
+            if (rand < 0.0125 && screen) {
+                anim = "idiom"
+                overFinished = false;
+            } else if (rand < 0.025 && screen) {
+                counter = 0;
+                anim = "song"
+                overFinished = false;
+            }
+            break;
+        }
+    }
 }
 next()

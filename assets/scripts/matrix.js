@@ -154,7 +154,7 @@ class TextScramble {
                 counter=0
             }
         }
-        else if (Math.random() < 0.05 && $(window).width() > 250) {
+        else if (Math.random() < 0.015 && $(window).width() > 250) {
             if (detti.length > 1){
                 while (detti_counter == previous_detti ) {
                     detti_counter = Math.floor(Math.random() * detti.length)
@@ -175,7 +175,7 @@ class TextScramble {
             if (Math.random() < 0.33 && counter != 0){braket=true;}
             else {braket = false;}
             previous=counter
-            if (Math.random() < 0.05 && $(window).width() > 250){ 
+            if (Math.random() < 0.025 && $(window).width() > 250){ 
                 counter=0;
                 mtrx=true 
             }

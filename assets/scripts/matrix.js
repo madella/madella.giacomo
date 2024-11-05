@@ -25,7 +25,6 @@ class TextScramble {
     setText(newText, start_Random, end_Random, braket) {
         let words = newText.split(' ');
         if (words.length > MAXWORDS && words[words.length - 1] != "♫") {
-            console.log(words[words.length - 1])
             let nnText = this.splitSentence(words);
             const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
             let promiseChain = Promise.resolve();
@@ -118,7 +117,7 @@ const phrases = [
 
 const detti = [
     'Learn a trade for a rainy day',
-    'Time moves slowly, but passes quickly'
+    'How you do anything is how you do everything'
 ]
 
 const phrases_mtrx = [
@@ -137,18 +136,18 @@ var entropy=0;
 var effEntropy=0;
 const el = document.querySelector('.text')
 const fx = new TextScramble(el)
-var overFinished = true
+// var overFinished = true
 let screen = $(window).width() > 250
-el.addEventListener('mouseover', () => {
-    if (overFinished && screen) {
-        entropy+=1;
-        overFinished = false;
-        effEntropy=((1.65*entropy)*effEntropy.toString().length).toFixed(2);
-        fx.setText(`S ≈ ${effEntropy}`, 50, 70, false).then(() => {
-            setTimeout(() => {overFinished = true;next();}, 3500);
-        })
-    }
-});
+// el.addEventListener('mouseover', () => {
+//     if (overFinished && screen) {
+//         entropy+=1;
+//         overFinished = false;
+//         effEntropy=((1.65*entropy)*effEntropy.toString().length).toFixed(2);
+//         fx.setText(`S ≈ ${effEntropy}`, 50, 70, false).then(() => {
+//             setTimeout(() => {overFinished = true;next();}, 3500);
+//         })
+//     }
+// });
 
 let anim="default"
 let braket = false
@@ -161,7 +160,7 @@ let previous_detti = 0
 //1.65 bits per character ≈ 39.6 bits 
 
 let next = () => {
-    if (!overFinished){return;}
+    // if (!overFinished){return;}
     let rand = Math.random()
     screen = $(window).width() > 250
     switch (anim) {
@@ -174,21 +173,20 @@ let next = () => {
                 anim="default"
                 counter = 0
                 previous = 0
-                overFinished = true;
+                // overFinished = true;
             }
             break;
         }
         case "idiom": {
-            if (detti.length > 1) {
-                while (detti_counter == previous_detti) {
-                    detti_counter = Math.floor(Math.random() * detti.length)
-                }
+            do{
+                detti_counter = Math.floor(Math.random() * detti.length)
             }
+            while (detti_counter == previous_detti && detti.length > 1)
             fx.setText(detti[detti_counter], 10, 30, false).then(() => {
                 setTimeout(next, 3500)
             })
             previous_detti = detti_counter
-            overFinished = true;
+            // overFinished = true;
             break;
         }
         default: {
@@ -202,13 +200,13 @@ let next = () => {
             braket = rand < 0.33 && counter !== 0;
 
             previous = counter
-            if (rand < 0.0125 && screen) {
+            if (rand < 0.025 && screen) {
                 anim = "idiom"
-                overFinished = false;
+                // overFinished = false;
             } else if (rand < 0.025 && screen) {
                 counter = 0;
                 anim = "song"
-                overFinished = false;
+                // overFinished = false;
             }
             break;
         }
